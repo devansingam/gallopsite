@@ -79,13 +79,12 @@ export const DemoPage = () => {
     setIsSubmitting(true);
 
     try {
-      // TODO: Replace with actual API call
-      // const response = await axios.post(`${API}/demo-request`, formData);
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+      const API = `${BACKEND_URL}/api`;
       
-      // Mock submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await axios.post(`${API}/demo-request`, formData);
       
-      console.log('Demo request submitted:', formData);
+      console.log('Demo request submitted:', response.data);
       toast({
         title: "Demo request received!",
         description: "We'll get in touch soon."
@@ -95,9 +94,15 @@ export const DemoPage = () => {
       navigate('/thank-you');
     } catch (error) {
       console.error('Error submitting demo request:', error);
+      
+      let errorMessage = "Please try again or email hello@gallop.my.";
+      if (error.response?.data?.detail) {
+        errorMessage = error.response.data.detail;
+      }
+      
       toast({
         title: "Something went wrong",
-        description: "Please try again or email hello@gallop.my.",
+        description: errorMessage,
         variant: "destructive"
       });
     } finally {
