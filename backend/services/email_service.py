@@ -9,12 +9,14 @@ logger = logging.getLogger(__name__)
 
 class EmailService:
     def __init__(self):
-        self.smtp_host = os.environ.get('SMTP_HOST')
+        self.smtp_host = os.environ.get('SMTP_HOST', 'smtp.gmail.com')
         self.smtp_port = int(os.environ.get('SMTP_PORT', 587))
         self.smtp_user = os.environ.get('SMTP_USER')
         self.smtp_password = os.environ.get('SMTP_PASSWORD')
         self.smtp_from = os.environ.get('SMTP_FROM')
         self.demo_request_email = os.environ.get('DEMO_REQUEST_EMAIL', 'dev@gallop.my')
+        
+        logger.info(f"Email service initialized with SMTP host: {self.smtp_host}, port: {self.smtp_port}")
 
     async def send_demo_request_email(self, request_data: dict, request_id: str):
         """
