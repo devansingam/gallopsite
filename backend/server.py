@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 
 # Import demo request models and services
 from models.demo_request import DemoRequest, DemoRequestCreate
-from services.email_service import email_service
+from services.email_service import EmailService
 
 
 ROOT_DIR = Path(__file__).parent
