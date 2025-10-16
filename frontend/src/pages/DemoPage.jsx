@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { Header } from '../components/gallop/Header';
 import { Footer } from '../components/gallop/Footer';
 import { industryOptions, outletOptions, contactTimeOptions, partners } from '../utils/mockData';
