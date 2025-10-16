@@ -75,6 +75,64 @@ async def get_status_checks():
     
     return status_checks
 
+@api_router.post("/demo-request", response_model=DemoRequestResponse)
+async def create_demo_request(demo_data: DemoRequestCreate, request: Request):
+    """
+    Handle demo request submissions
+    - Validate input
+    - Save to database
+    - Send email notification
+    """
+    try:
+        # Validate consent
+        if not demo_data.consent:
+            raise HTTPException(status_code=400, detail="Consent is required to submit demo request")
+        
+        # Create demo request object
+        demo_request = DemoRequest(
+            **demo_data.model_dump(),
+            ipAddress=request.client.host if request.client else None
+        )
+        
+        # Convert to dict and serialize datetime to ISO string for MongoDB
+        doc = demo_request.model_dump()
+        doc['submittedAt'] = doc['submittedAt'].isoformat()
+        if doc.get('emailSentAt'):
+            doc['emailSentAt'] = doc['emailSentAt'].isoformat()
+        
+        # Save to database
+        await db.demo_requests.insert_one(doc)
+        
+        # Send email notification
+        try:
+            await email_service.send_demo_request_email(
+                demo_data.model_dump(),
+                demo_request.requestId
+            )
+            
+            # Update email sent status
+            await db.demo_requests.update_one(
+                {"requestId": demo_request.requestId},
+                {"$set": {"emailSent": True, "emailSentAt": datetime.now(timezone.utc).isoformat()}}
+            )
+            
+        except Exception as email_error:
+            logging.error(f"Email sending failed: {str(email_error)}")
+            # Don't fail the request if email fails, just log it
+            # The data is still saved in database
+        
+        return DemoRequestResponse(
+            success=True,
+            message="Demo request received! We'll get in touch soon.",
+            requestId=demo_request.requestId
+        )
+        
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        logging.error(f"Error processing demo request: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to process demo request")
+
 # Include the router in the main app
 app.include_router(api_router)
 
