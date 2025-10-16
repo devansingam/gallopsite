@@ -149,5 +149,3 @@ Request ID: {request_id}
 </html>
 """
         return html
-
-email_service = EmailService()
