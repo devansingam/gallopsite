@@ -236,7 +236,7 @@ export const DemoPage = () => {
                     name="companyName"
                     value={formData.companyName}
                     onChange={handleChange}
-                    placeholder="e.g. Serai Group Sdn Bhd"
+                    placeholder="e.g. Gallop Enterprise Sdn Bhd"
                     style={{
                       width: '100%',
                       padding: '0.875rem 1rem',
