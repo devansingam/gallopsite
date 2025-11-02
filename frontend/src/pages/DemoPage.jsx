@@ -211,7 +211,7 @@ export const DemoPage = () => {
                     name="workEmail"
                     value={formData.workEmail}
                     onChange={handleChange}
-                    placeholder="e.g. jane.lee@serai.com"
+                    placeholder="e.g. jane.lee@gallop.my"
                     style={{
                       width: '100%',
                       padding: '0.875rem 1rem',
