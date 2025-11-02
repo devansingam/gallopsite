@@ -80,10 +80,22 @@ export const DemoPage = () => {
     setIsSubmitting(true);
 
     try {
-      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-      const API = `${BACKEND_URL}/api`;
+      // Generate request ID
+      const requestId = `REQ-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
       
-      const response = await axios.post(`${API}/demo-request`, formData);
+      // Send directly to Google Apps Script webhook
+      const response = await axios.post(
+        'https://script.google.com/macros/s/AKfycbxI888eZyhJZzvrkd1FkyxaLfYPiYg_YxR_rNAdq0EPZLEva-ryt3_U_UBPRioxz4SH/exec',
+        {
+          ...formData,
+          requestId: requestId
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }
+      );
       
       console.log('Demo request submitted:', response.data);
       toast({
@@ -97,8 +109,8 @@ export const DemoPage = () => {
       console.error('Error submitting demo request:', error);
       
       let errorMessage = "Please try again or email dev@gallop.my.";
-      if (error.response?.data?.detail) {
-        errorMessage = error.response.data.detail;
+      if (error.response?.data?.error) {
+        errorMessage = error.response.data.error;
       }
       
       toast({
