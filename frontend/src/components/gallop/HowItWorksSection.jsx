@@ -119,7 +119,7 @@ export const HowItWorksSection = () => {
 
         {/* Tagline */}
         <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-          <p className="heading-4" style={{ color: 'var(--gallop-teal)' }}>
+          <p className="heading-4" style={{ color: 'var(--gallop-teal)', marginBottom: '2rem' }}>
             “From SOPs to Workflows, Audits to Insight — Gallop gives you total control.”
           </p>
         </div>
