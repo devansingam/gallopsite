@@ -2,6 +2,18 @@ import React from 'react';
 import { workflowSteps } from '../../utils/mockData';
 import { FileText } from 'lucide-react';
 
+// Map step IDs to image URLs
+const getStepImage = (stepId) => {
+  const images = {
+    1: 'https://images.unsplash.com/photo-1758873272562-aa5459cbf34b',
+    2: 'https://images.unsplash.com/photo-1758876202507-f789e0ab34e1',
+    3: 'https://images.unsplash.com/photo-1758873263563-5ba4aa330799',
+    4: 'https://images.unsplash.com/photo-1758873268783-967d13f0c163',
+    5: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71'
+  };
+  return images[stepId] || images[1];
+};
+
 export const HowItWorksSection = () => {
   return (
     <section id="how-it-works" className="section-spacing-lg" style={{ background: 'var(--bg-page)' }}>
