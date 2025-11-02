@@ -109,8 +109,8 @@ export const ThankYouPage = () => {
           {/* Footer Note */}
           <p className="body-small" style={{ color: 'var(--text-muted)' }}>
             Didn't get an email? Check spam or contact{' '}
-            <a href="mailto:hello@gallop.my" style={{ color: 'var(--gallop-teal)', textDecoration: 'underline' }}>
-              hello@gallop.my
+            <a href="mailto:dev@gallop.my" style={{ color: 'var(--gallop-teal)', textDecoration: 'underline' }}>
+              dev@gallop.my
             </a>
           </p>
         </div>
