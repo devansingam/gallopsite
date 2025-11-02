@@ -60,10 +60,14 @@ export const IndustriesSection = () => {
                 {/* Custom Illustration */}
                 <div style={{
                   width: '100%',
-                  height: '180px',
+                  height: '200px',
                   marginBottom: '1.5rem',
                   borderRadius: '12px',
-                  overflow: 'hidden'
+                  overflow: 'hidden',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: 'var(--bg-section)'
                 }}>
                   <img 
                     src={getIndustryImage(industry.id)}
@@ -71,7 +75,8 @@ export const IndustriesSection = () => {
                     style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover'
+                      objectFit: 'contain',
+                      padding: '0.5rem'
                     }}
                   />
                 </div>
