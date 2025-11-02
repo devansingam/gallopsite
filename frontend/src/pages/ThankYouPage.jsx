@@ -53,42 +53,6 @@ export const ThankYouPage = () => {
             gap: '1.5rem',
             marginBottom: '3rem'
           }}>
-            {/* Schedule Card */}
-            <div style={{
-              background: 'white',
-              borderRadius: '20px',
-              padding: '2rem',
-              border: '1px solid var(--border-light)',
-              boxShadow: 'var(--shadow-md)',
-              transition: 'all 0.3s ease',
-              cursor: 'pointer'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-4px)';
-              e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'var(--shadow-md)';
-            }}
-            onClick={() => window.open('https://calendly.com', '_blank')}
-            >
-              <div style={{
-                width: '56px',
-                height: '56px',
-                borderRadius: '12px',
-                background: 'var(--bg-purple-wash)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 1rem'
-              }}>
-                <Calendar size={28} color="var(--gallop-purple)" />
-              </div>
-              <h3 className="heading-4" style={{ marginBottom: '0.5rem', fontSize: '1.125rem' }}>Schedule a Time</h3>
-              <p className="body-small" style={{ margin: 0 }}>Pick a convenient slot on our calendar</p>
-            </div>
-
             {/* Homepage Card */}
             <div style={{
               background: 'white',
@@ -126,13 +90,20 @@ export const ThankYouPage = () => {
             </div>
           </div>
 
-          {/* Illustration */}
-          <div className="illustration-placeholder" style={{ maxWidth: '600px', margin: '0 auto 3rem' }}>
-            <div className="illustration-placeholder-icon"><PartyPopper size={48} /></div>
-            <p className="illustration-placeholder-text">
-              <strong>Thank You Illustration:</strong><br/>
-              Happy staff celebrating completed tasks with confetti and trophy icons
-            </p>
+          {/* Happy Staff Illustration */}
+          <div style={{ maxWidth: '700px', margin: '0 auto 3rem' }}>
+            <img 
+              src="https://images.unsplash.com/photo-1758691737584-a8f17fb34475"
+              alt="Happy staff celebrating completed tasks and successful collaboration"
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: '20px',
+                boxShadow: 'var(--shadow-lg)',
+                objectFit: 'cover',
+                maxHeight: '450px'
+              }}
+            />
           </div>
 
           {/* Footer Note */}
