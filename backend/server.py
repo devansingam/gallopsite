@@ -142,7 +142,12 @@ app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=[
+        "*",  # Allow all origins for development
+        "https://*.vercel.app",  # Allow Vercel preview deployments
+        "https://gallop.my",  # Production domain
+        "https://www.gallop.my"  # Production domain with www
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
