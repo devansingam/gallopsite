@@ -4,8 +4,29 @@ import { Quote } from 'lucide-react';
 
 export const TestimonialsSection = () => {
   return (
-    <section className="section-spacing" style={{ background: 'var(--bg-purple-wash)' }}>
-      <div className="container">
+    <section 
+      className="section-spacing" 
+      style={{ 
+        background: 'var(--bg-purple-wash)',
+        backgroundImage: 'url(https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/9qhaoiuq_testimonials-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative'
+      }}
+    >
+      {/* Overlay for better text readability */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'rgba(255, 255, 255, 0.85)',
+        zIndex: 0
+      }} />
+      
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
           <h2 className="heading-2" style={{ marginBottom: '1rem' }}>
