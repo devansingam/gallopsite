@@ -39,13 +39,20 @@ export const HowItWorksSection = () => {
                 <p className="body-medium" style={{ color: 'var(--text-secondary)' }}>{step.description}</p>
               </div>
 
-              {/* Illustration Placeholder */}
-              <div className="illustration-placeholder" style={{ order: index % 2 === 0 ? 2 : 1, minHeight: '280px' }}>
-                <div className="illustration-placeholder-icon">📄</div>
-                <p className="illustration-placeholder-text">
-                  <strong>Step {step.number}:</strong><br/>
-                  {step.illustrationDesc}
-                </p>
+              {/* Illustration */}
+              <div style={{ order: index % 2 === 0 ? 2 : 1, minHeight: '280px' }}>
+                <img 
+                  src={getStepImage(step.id)}
+                  alt={`Step ${step.number}: ${step.title}`}
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '16px',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+                    objectFit: 'cover',
+                    maxHeight: '400px'
+                  }}
+                />
               </div>
             </div>
           ))}
