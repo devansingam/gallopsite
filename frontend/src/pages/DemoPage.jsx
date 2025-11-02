@@ -83,39 +83,43 @@ export const DemoPage = () => {
       // Generate request ID
       const requestId = `REQ-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
       
-      // Send directly to Google Apps Script webhook
-      const response = await axios.post(
-        'https://script.google.com/macros/s/AKfycbxI888eZyhJZzvrkd1FkyxaLfYPiYg_YxR_rNAdq0EPZLEva-ryt3_U_UBPRioxz4SH/exec',
-        {
-          ...formData,
-          requestId: requestId
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        }
-      );
+      // Create a hidden form to submit
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://script.google.com/macros/s/AKfycbxI888eZyhJZzvrkd1FkyxaLfYPiYg_YxR_rNAdq0EPZLEva-ryt3_U_UBPRioxz4SH/exec';
+      form.target = '_blank';
       
-      console.log('Demo request submitted:', response.data);
+      // Add all form data
+      const data = { ...formData, requestId };
+      Object.keys(data).forEach(key => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = data[key];
+        form.appendChild(input);
+      });
+      
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+      
+      // Show success message
       toast({
         title: "Demo request received!",
         description: "We'll get in touch soon."
       });
       
-      // Navigate to thank you page
-      navigate('/thank-you');
+      // Navigate to thank you page immediately
+      setTimeout(() => {
+        navigate('/thank-you');
+      }, 500);
+      
     } catch (error) {
       console.error('Error submitting demo request:', error);
       
-      let errorMessage = "Please try again or email dev@gallop.my.";
-      if (error.response?.data?.error) {
-        errorMessage = error.response.data.error;
-      }
-      
       toast({
         title: "Something went wrong",
-        description: errorMessage,
+        description: "Please try again or email dev@gallop.my.",
         variant: "destructive"
       });
     } finally {
