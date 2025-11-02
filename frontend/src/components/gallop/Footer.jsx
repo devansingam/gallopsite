@@ -74,7 +74,7 @@ export const Footer = () => {
           <div>
             <h4 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: '600', fontSize: '1.125rem', marginBottom: '1rem' }}>Partners</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <li><span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9375rem' }}>Serai Group</span></li>
+              <li><span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9375rem' }}>Gallop Enterprise Partners</span></li>
               <li><span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9375rem' }}>Ilham Inovasi</span></li>
               <li><span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9375rem' }}>Prasada Maju</span></li>
             </ul>
