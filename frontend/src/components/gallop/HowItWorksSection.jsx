@@ -61,8 +61,8 @@ export const HowItWorksSection = () => {
                     height: 'auto',
                     borderRadius: '16px',
                     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
-                    objectFit: 'cover',
-                    maxHeight: '400px'
+                    objectFit: 'contain',
+                    maxHeight: '450px'
                   }}
                 />
               </div>
