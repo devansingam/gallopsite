@@ -94,15 +94,15 @@ export const PricingSection = () => {
             {/* Illustration */}
             <div style={{ marginTop: '2.5rem' }}>
               <img 
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+                src="https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/pjcsjwa2_pricing.png"
                 alt="Manager analyzing cost vs efficiency ROI improvement charts"
                 style={{
                   width: '100%',
                   height: 'auto',
                   borderRadius: '16px',
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
-                  objectFit: 'cover',
-                  maxHeight: '300px'
+                  objectFit: 'contain',
+                  maxHeight: '350px'
                 }}
               />
             </div>
