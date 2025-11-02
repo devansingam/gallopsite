@@ -101,12 +101,19 @@ export const HowItWorksSection = () => {
             </p>
           </div>
 
-          <div className="illustration-placeholder">
-            <div className="illustration-placeholder-icon">☁️</div>
-            <p className="illustration-placeholder-text">
-              <strong>Digital Logs Illustration:</strong><br/>
-              Worker entering temperature/waste data on tablet → cloud icon → data flowing into central dashboard
-            </p>
+          <div>
+            <img 
+              src="https://images.unsplash.com/photo-1670852714979-f73d21652a83"
+              alt="Worker entering temperature and waste data on tablet with cloud synchronization to central dashboard"
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: '16px',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+                objectFit: 'cover',
+                maxHeight: '350px'
+              }}
+            />
           </div>
         </div>
 
