@@ -109,7 +109,7 @@ export const testimonials = [
     id: 1,
     quote: 'Gallop keeps our 30 outlets consistent and compliant.',
     author: 'COO',
-    company: 'Gallop Enterprise Partners'
+    company: 'Serai Group'
   },
   {
     id: 2,
@@ -120,7 +120,7 @@ export const testimonials = [
 ];
 
 export const partners = [
-  { id: 1, name: 'Gallop Enterprise Partners' },
+  { id: 1, name: 'Serai Group' },
   { id: 2, name: 'Ilham Inovasi' },
   { id: 3, name: 'Prasada Maju' }
 ];
