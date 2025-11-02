@@ -131,6 +131,21 @@ export const DemoPage = () => {
                 A quick demo tailored to your operations and workflows.
               </p>
 
+              {/* Demo Hero Illustration */}
+              <div style={{ marginBottom: '2.5rem' }}>
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/ci3z77xp_demo-hero.png"
+                  alt="Gallop demo illustration showing compliance management platform"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '16px',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
+
               {/* Benefits */}
               <div style={{ marginBottom: '3rem' }}>
                 {[
