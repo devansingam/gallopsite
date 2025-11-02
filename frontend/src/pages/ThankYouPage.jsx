@@ -93,15 +93,15 @@ export const ThankYouPage = () => {
           {/* Happy Staff Illustration */}
           <div style={{ maxWidth: '700px', margin: '0 auto 3rem' }}>
             <img 
-              src="https://images.unsplash.com/photo-1758691737584-a8f17fb34475"
+              src="https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/368iotbb_thank-you.png"
               alt="Happy staff celebrating completed tasks and successful collaboration"
               style={{
                 width: '100%',
                 height: 'auto',
                 borderRadius: '20px',
                 boxShadow: 'var(--shadow-lg)',
-                objectFit: 'cover',
-                maxHeight: '450px'
+                objectFit: 'contain',
+                maxHeight: '500px'
               }}
             />
           </div>
