@@ -96,7 +96,7 @@ export const DemoPage = () => {
     } catch (error) {
       console.error('Error submitting demo request:', error);
       
-      let errorMessage = "Please try again or email hello@gallop.my.";
+      let errorMessage = "Please try again or email dev@gallop.my.";
       if (error.response?.data?.detail) {
         errorMessage = error.response.data.detail;
       }
