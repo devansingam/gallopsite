@@ -21,8 +21,8 @@ export const industries = [
   },
   {
     id: 4,
-    name: 'Cleaning Services',
-    description: 'Site audits, equipment checks, service quality control',
+    name: 'Facilities Management',
+    description: 'Building maintenance, safety audits, asset management, service quality',
     icon: 'Sparkles'
   }
 ];
