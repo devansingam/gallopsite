@@ -106,6 +106,24 @@ export const Header = () => {
           <Link to="/demo" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Get Demo</Link>
           <a href="#features" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Features</a>
           <a href="#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
+          <a 
+            href="https://app.gallop.my" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              background: 'var(--gallop-purple)',
+              color: 'white',
+              padding: '12px 20px',
+              borderRadius: '9999px',
+              fontSize: '1rem',
+              fontWeight: '600',
+              textDecoration: 'none',
+              textAlign: 'center',
+              marginTop: '0.5rem'
+            }}
+          >
+            Login
+          </a>
           <Link to="/demo" className="btn-primary" onClick={() => setMobileMenuOpen(false)} style={{ marginTop: '0.5rem' }}>
             Start Today
           </Link>
