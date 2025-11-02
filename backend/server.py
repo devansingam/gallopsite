@@ -145,6 +145,7 @@ app.add_middleware(
     allow_origins=[
         "*",  # Allow all origins for development
         "https://*.vercel.app",  # Allow Vercel preview deployments
+        "https://*.emergent.host",  # Allow Emergent production domain
         "https://gallop.my",  # Production domain
         "https://www.gallop.my"  # Production domain with www
     ],
