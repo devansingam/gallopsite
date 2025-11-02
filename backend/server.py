@@ -44,7 +44,7 @@ async def create_demo_request(demo_data: DemoRequestCreate, request: Request):
     """
     Handle demo request submissions
     - Validate input
-    - Save to database
+    - Save to Google Sheets
     - Send email notification
     """
     try:
@@ -58,14 +58,15 @@ async def create_demo_request(demo_data: DemoRequestCreate, request: Request):
             ipAddress=request.client.host if request.client else None
         )
         
-        # Convert to dict and serialize datetime to ISO string for MongoDB
-        doc = demo_request.model_dump()
-        doc['submittedAt'] = doc['submittedAt'].isoformat()
-        if doc.get('emailSentAt'):
-            doc['emailSentAt'] = doc['emailSentAt'].isoformat()
-        
-        # Save to database
-        await db.demo_requests.insert_one(doc)
+        # Save to Google Sheets
+        try:
+            await sheets_service.add_demo_request(
+                demo_data.model_dump(),
+                demo_request.requestId
+            )
+        except Exception as sheets_error:
+            logging.error(f"Google Sheets save failed: {str(sheets_error)}")
+            # Continue - we can still send email
         
         # Send email notification
         try:
@@ -73,17 +74,9 @@ async def create_demo_request(demo_data: DemoRequestCreate, request: Request):
                 demo_data.model_dump(),
                 demo_request.requestId
             )
-            
-            # Update email sent status
-            await db.demo_requests.update_one(
-                {"requestId": demo_request.requestId},
-                {"$set": {"emailSent": True, "emailSentAt": datetime.now(timezone.utc).isoformat()}}
-            )
-            
         except Exception as email_error:
             logging.error(f"Email sending failed: {str(email_error)}")
-            # Don't fail the request if email fails, just log it
-            # The data is still saved in database
+            # Don't fail the request if email fails
         
         return DemoRequestResponse(
             success=True,
