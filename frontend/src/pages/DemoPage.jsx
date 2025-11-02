@@ -83,19 +83,29 @@ export const DemoPage = () => {
       // Generate request ID
       const requestId = `REQ-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
       
-      // Create a hidden form to submit
+      // Create hidden iframe for form submission
+      let iframe = document.getElementById('hidden-form-iframe');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.id = 'hidden-form-iframe';
+        iframe.name = 'hidden-form-iframe';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+      }
+      
+      // Create form to submit to iframe
       const form = document.createElement('form');
       form.method = 'POST';
       form.action = 'https://script.google.com/macros/s/AKfycbxI888eZyhJZzvrkd1FkyxaLfYPiYg_YxR_rNAdq0EPZLEva-ryt3_U_UBPRioxz4SH/exec';
-      form.target = '_blank';
+      form.target = 'hidden-form-iframe';
       
-      // Add all form data
+      // Add all form data as hidden inputs
       const data = { ...formData, requestId };
       Object.keys(data).forEach(key => {
         const input = document.createElement('input');
         input.type = 'hidden';
         input.name = key;
-        input.value = data[key];
+        input.value = data[key] || '';
         form.appendChild(input);
       });
       
@@ -109,10 +119,10 @@ export const DemoPage = () => {
         description: "We'll get in touch soon."
       });
       
-      // Navigate to thank you page immediately
+      // Navigate to thank you page
       setTimeout(() => {
         navigate('/thank-you');
-      }, 500);
+      }, 1000);
       
     } catch (error) {
       console.error('Error submitting demo request:', error);
@@ -122,7 +132,6 @@ export const DemoPage = () => {
         description: "Please try again or email dev@gallop.my.",
         variant: "destructive"
       });
-    } finally {
       setIsSubmitting(false);
     }
   };
