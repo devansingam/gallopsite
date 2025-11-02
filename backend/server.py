@@ -1,7 +1,6 @@
 from fastapi import FastAPI, APIRouter, HTTPException, Request
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
@@ -13,6 +12,7 @@ from datetime import datetime, timezone
 # Import demo request models and services
 from models.demo_request import DemoRequest, DemoRequestCreate
 from services.email_service import EmailService
+from services.sheets_service import sheets_service
 
 
 ROOT_DIR = Path(__file__).parent
