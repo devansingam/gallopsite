@@ -5,11 +5,11 @@ import { FileText } from 'lucide-react';
 // Map step IDs to image URLs
 const getStepImage = (stepId) => {
   const images = {
-    1: 'https://images.unsplash.com/photo-1758873272562-aa5459cbf34b',
-    2: 'https://images.unsplash.com/photo-1758876202507-f789e0ab34e1',
-    3: 'https://images.unsplash.com/photo-1758873263563-5ba4aa330799',
-    4: 'https://images.unsplash.com/photo-1758873268783-967d13f0c163',
-    5: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71'
+    1: 'https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/dq6locms_step1-sops.png',
+    2: 'https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/9lxs8m19_step2-workflow.png',
+    3: 'https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/3y8jmuki_step3-audit.png',
+    4: 'https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/cycv1b61_step4-assign.png',
+    5: 'https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/58j4fo7m_step5-monitor.png'
   };
   return images[stepId] || images[1];
 };
