@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Header } from '../components/gallop/Header';
 import { Footer } from '../components/gallop/Footer';
-import { CheckCircle, Calendar, Home, PartyPopper } from 'lucide-react';
+import { CheckCircle, Home } from 'lucide-react';
 
 export const ThankYouPage = () => {
   const navigate = useNavigate();
