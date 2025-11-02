@@ -122,6 +122,21 @@ export const HowItWorksSection = () => {
           <p className="heading-4" style={{ color: 'var(--gallop-teal)', marginBottom: '2rem' }}>
             “From SOPs to Workflows, Audits to Insight — Gallop gives you total control.”
           </p>
+          
+          {/* Flow Summary Illustration */}
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/u5dlaxyh_flow-summary.png"
+              alt="Complete workflow visualization from SOPs to monitoring"
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: '16px',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+                objectFit: 'contain'
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>
