@@ -38,7 +38,39 @@ export const Header = () => {
           </Link>
           <a href="#features" className="nav-link">Features</a>
           <a href="#pricing" className="nav-link">Pricing</a>
-          <Link to="/demo" className="btn-primary" style={{ marginLeft: '1rem' }}>
+          
+          {/* Login Button */}
+          <a 
+            href="https://app.gallop.my" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              background: 'var(--gallop-purple)',
+              color: 'white',
+              padding: '10px 20px',
+              borderRadius: '9999px',
+              fontSize: '0.9375rem',
+              fontWeight: '600',
+              textDecoration: 'none',
+              transition: 'all 0.2s ease',
+              marginLeft: '0.5rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              border: 'none'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#5a0678';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'var(--gallop-purple)';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
+          >
+            Login
+          </a>
+          
+          <Link to="/demo" className="btn-primary" style={{ marginLeft: '0.5rem' }}>
             Start Today
           </Link>
         </nav>
