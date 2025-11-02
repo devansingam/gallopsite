@@ -27,11 +27,11 @@ export const Footer = () => {
               Where SOP Meets Action
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <a href="mailto:hello@gallop.my" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'none', fontSize: '0.9375rem' }}>
-                <Mail size={16} /> hello@gallop.my
+              <a href="mailto:dev@gallop.my" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'none', fontSize: '0.9375rem' }}>
+                <Mail size={16} /> dev@gallop.my
               </a>
-              <a href="tel:+60123456789" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'none', fontSize: '0.9375rem' }}>
-                <Phone size={16} /> +60 12-345 6789
+              <a href="tel:+601112166316" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'none', fontSize: '0.9375rem' }}>
+                <Phone size={16} /> +6011 121 66316
               </a>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.9375rem' }}>
                 <MapPin size={16} style={{ marginTop: '2px', flexShrink: 0 }} /> 
