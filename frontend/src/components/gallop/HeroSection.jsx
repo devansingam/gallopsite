@@ -43,13 +43,18 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right: Illustration Placeholder */}
-          <div className="illustration-placeholder fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <div className="illustration-placeholder-icon">👥</div>
-            <p className="illustration-placeholder-text">
-              <strong>Hero Illustration:</strong><br/>
-              Multi-industry Malaysian teams (kitchen staff, hotel workers, retail employees, cleaning crew) completing digital tasks on tablets/phones, with a manager observing progress dashboard in background.
-            </p>
+          {/* Right: Hero Illustration */}
+          <div className="fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/yyzmcxde_hero.png"
+              alt="Multi-industry Malaysian teams completing digital tasks on tablets with manager observing progress dashboard"
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: '20px',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)'
+              }}
+            />
           </div>
         </div>
       </div>
