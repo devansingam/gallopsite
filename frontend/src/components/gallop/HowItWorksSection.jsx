@@ -103,7 +103,7 @@ export const HowItWorksSection = () => {
 
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1670852714979-f73d21652a83"
+              src="https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/l46380qr_digital-logs.png"
               alt="Worker entering temperature and waste data on tablet with cloud synchronization to central dashboard"
               style={{
                 width: '100%',
