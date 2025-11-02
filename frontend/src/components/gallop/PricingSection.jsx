@@ -93,13 +93,18 @@ export const PricingSection = () => {
 
             {/* Illustration */}
             <div style={{ marginTop: '2.5rem' }}>
-              <div className="illustration-placeholder" style={{ minHeight: '200px' }}>
-                <div className="illustration-placeholder-icon"><TrendingUp size={48} /></div>
-                <p className="illustration-placeholder-text">
-                  <strong>Pricing Illustration:</strong><br/>
-                  Manager comparing cost vs. efficiency chart showing ROI improvement
-                </p>
-              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+                alt="Manager analyzing cost vs efficiency ROI improvement charts"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '16px',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+                  objectFit: 'cover',
+                  maxHeight: '300px'
+                }}
+              />
             </div>
           </div>
         </div>
