@@ -129,10 +129,10 @@ export const industryOptions = [
   'Restaurant & F&B',
   'Retail',
   'Hospitality',
-  'Cleaning Services',
+  'Facilities Management',
   'Healthcare',
   'Manufacturing',
-  'Facilities Management',
+  'Education',
   'Other'
 ];
 
