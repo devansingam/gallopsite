@@ -1,12 +1,15 @@
 import React from 'react';
 import { industries } from '../../utils/mockData';
-import { ChefHat, ShoppingBag, Hotel, Sparkles } from 'lucide-react';
 
-const iconMap = {
-  'Chef': ChefHat,
-  'ShoppingBag': ShoppingBag,
-  'Hotel': Hotel,
-  'Sparkles': Sparkles
+// Map industry IDs to custom illustration URLs
+const getIndustryImage = (industryId) => {
+  const images = {
+    1: 'https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/y1kd8vwu_industry-restaurant.png',
+    2: 'https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/614twtpy_industry-retail.png',
+    3: 'https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/f0uuotx2_industry-hotel.png',
+    4: 'https://customer-assets.emergentagent.com/job_compliance-hub-112/artifacts/ntgk6z5b_industry-cleaning.png'
+  };
+  return images[industryId] || images[1];
 };
 
 export const IndustriesSection = () => {
@@ -30,18 +33,18 @@ export const IndustriesSection = () => {
           gap: '2rem'
         }}>
           {industries.map((industry) => {
-            const IconComponent = iconMap[industry.icon];
             return (
               <div 
                 key={industry.id} 
                 style={{
                   background: 'white',
                   borderRadius: '16px',
-                  padding: '2rem',
+                  padding: '1.5rem',
                   textAlign: 'center',
                   border: '1px solid var(--border-light)',
                   transition: 'all 0.3s ease',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  overflow: 'hidden'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-4px)';
@@ -54,17 +57,23 @@ export const IndustriesSection = () => {
                   e.currentTarget.style.borderColor = 'var(--border-light)';
                 }}
               >
+                {/* Custom Illustration */}
                 <div style={{
-                  width: '72px',
-                  height: '72px',
-                  borderRadius: '16px',
-                  background: 'var(--bg-purple-wash)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 1.5rem'
+                  width: '100%',
+                  height: '180px',
+                  marginBottom: '1.5rem',
+                  borderRadius: '12px',
+                  overflow: 'hidden'
                 }}>
-                  <IconComponent size={36} color="var(--gallop-purple)" strokeWidth={1.5} />
+                  <img 
+                    src={getIndustryImage(industry.id)}
+                    alt={`${industry.name} illustration`}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                  />
                 </div>
                 <h3 className="heading-4" style={{ marginBottom: '0.75rem', fontSize: '1.25rem' }}>{industry.name}</h3>
                 <p className="body-small" style={{ margin: 0 }}>{industry.description}</p>
